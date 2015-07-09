@@ -1,0 +1,4 @@
+form{
+	@include display-flex;
+	@include flex-direction(column);
+}
