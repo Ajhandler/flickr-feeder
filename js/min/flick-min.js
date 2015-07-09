@@ -1,1 +1,1 @@
-$(document).ready(function(){$("button").click(function(){console.log("hi")})});
+$(document).ready(function(){$("button").click(function(){var t="http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",i=$(this).text(),c={tags:i,format:"json"},n=function(t){var i="<ul>";$.each(t.items,function(t,c){i+="<li>",i+='<a href="'+c.link+'">',i+='<img src = "'+c.media.m+'"></a></li>'}),i+="</ul>",$("#photos").html(i)};$.getJSON(t,c,n)})});
