@@ -1,12 +1,12 @@
 $(document).ready(function(){
 	$('form').submit(function(e){
 		e.preventDefault();
-		var search = $("#search").val();
+		var $search = $("#search").val();
 		var $searchField = $("#search")
-		var submitbutton = $("#submit");
+		var $submitButton = $("#submit");
 
 		$searchField.prop("disabled", true)
-		submitbutton.attr("disabled",true).val("searching....")
+		$submitButton.attr("disabled",true).val("searching....")
 		var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
 		var flickrOptions = {
 			tags: search,
