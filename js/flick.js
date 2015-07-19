@@ -9,7 +9,7 @@ $(document).ready(function(){
 		$submitButton.attr("disabled",true).val("searching....")
 		var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
 		var flickrOptions = {
-			tags: search,
+			tags: $search,
 			format : "json"
 		};
 		var displayPhotos = function(data){
@@ -21,8 +21,8 @@ $(document).ready(function(){
 			});
 			photoHtml += '</ul>'
 			$('#photos').html(photoHtml);
-			$searchField.prop("disabled",false)
-			submitbutton.attr("disabled",false).val("search for this")
+			$searchField.prop("disabled",false);
+			$submitbutton.attr("disabled",false).val("search for this");
 		}
 		$.getJSON(flickerAPI,flickrOptions,displayPhotos);
 	});
